@@ -1,0 +1,92 @@
+%%% Personal data.
+\usepackage[utf8x]{inputenc} % Fix potential input encoding issues.
+
+\newcommand{\ourTitle}{Your Title Here}
+\newcommand{\ourShortname}{J. Doe et al}
+\newcommand{\ourNames}{
+John Doe\\
+Jane Doe
+}
+\newcommand{\ourDate}{Your Date Here}
+\newcommand{\ourProject}{Your Project Here}
+\newcommand{\ourDept}{Your Department Here}
+\newcommand{\ourFaculty}{Your Faculty Here}
+\newcommand{\ourUni}{Your University Here}
+\newcommand{\myVersion}{0.1.0-alpha01}
+
+%%% Util commands
+\newcommand{\thx}[1]{\spacedlowsmallcaps{#1}}
+\newcommand{\thxc}[1]{\multicolumn{1}{c}{\spacedlowsmallcaps{#1}}}
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}}
+\newcommand{\TODO}[1]{} %% TODO: Add in these again
+\newcommand{\NOTE}[1]{} %%
+\newcommand{\CHECK}[1]{}%%
+\newcommand{\acfoot}[1]{\acsu{#1}\footnote{\acl*{#1}}}
+
+%%% Util environments
+\newenvironment{Test}[0]
+{\begin{addmargin}[1cm]{0cm}}
+{\end{addmargin}}
+
+%%% Packages
+
+\usepackage{scrextend}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{comment}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{appendix}
+\usepackage[nohyperlinks]{acronym}
+
+%%% Fine-tuning of this classicthesis
+\newcounter{dummy} % Fixes hyperref-errors (?)
+\usepackage{textcomp} % Fixes error messages that fonts are swapped out
+\usepackage{scrhack} % Fixes warnings in listings
+
+\usepackage{xspace} % Handles space after macros.
+\usepackage{mparhack} % Margin fixes
+\usepackage{fixltx2e} % General fix for other small stuff
+
+%%% Hyperref setup
+\hypersetup{
+    draft, % Smart to add so that one avoids sending the wrong PDF :). Tick off
+           % when sending the real deal.
+    colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,
+    % Remove the comments (all of the ones in the hyperref setup) below to get
+    % black links.
+    % colorlinks=false, linktocpage=false, pdfborder={0 0 0},
+    breaklinks=true, pdfpagemode=UseNone, pageanchor=true,
+    pdfpagemode=UseOutlines,plainpages=false, bookmarksnumbered,
+    bookmarksopen=true, bookmarksopenlevel=1, hypertexnames=true,
+    pdfhighlight=/O,
+    urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=webgreen,
+    % pagecolor=RoyalBlue,
+    % urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,
+    pdftitle={\ourTitle},
+    pdfauthor={\textcopyright\ \ourShortname, \ourUni, \ourFaculty},
+    pdfsubject={\ourProject},
+}
+
+\renewcommand{\bflabel}[1]{{#1}\hfill}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[chapter]{minted}
+\usemintedstyle{perldoc} %% Or another style if you'd like.
+\newenvironment{code}{\captionsetup{type=listing}\centering}{}
+\renewcommand\listoflistingscaption{List of Listings}
+
+\usepackage{amsmath, amssymb}
+%% Note: eulermath is sweet for equations, but requires a 500 mb font bundle
+%% installed. Leave it off if you don't need it.
+\usepackage[dottedtoc,eulermath,beramono,eulerchapternumbers,
+            floatperchapter,pdfspacing
+            ]{classicthesis}
+\setlength{\parskip}{\bigskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{tikz}
+
+%\renewcommand{\lstlistlistingname}{List of Listings} %% TODO: Why is this
+%commented out?

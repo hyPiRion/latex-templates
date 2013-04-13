@@ -1,0 +1,36 @@
+\documentclass[oneside,openright,titlepage,numbers=noenddot,headinclude,
+               footinclude=true,cleardoublepage=empty,
+               BCOR=5mm,paper=a4,fontsize=11pt]{scrreprt}
+
+\input{config}
+
+\begin{document}
+\frenchspacing
+\raggedbottom
+\pagestyle{empty}
+
+\include{fb/front} \cleardoublepage
+\pagestyle{plain}
+\pagenumbering{alph}
+\include{fb/abstract} \cleardoublepage
+\include{fb/acknowledgements} \cleardoublepage
+
+\input{fb/contents}
+
+\pagenumbering{arabic}
+
+% \input{ch/intro} %% Chapters go here
+
+Fictive citation here to avoid bibtex crash\cite{wiki:example}.
+
+
+% Comment these away if you have no appendices
+\appendix
+\appendixpage
+\addappheadtotoc
+
+% \input{apx/stuff} %% Appendices goes here
+
+\include{fb/bibliography}
+
+\end{document}
