@@ -19,7 +19,7 @@ Jane Doe
 \newcommand{\thxc}[1]{\multicolumn{1}{c}{\spacedlowsmallcaps{#1}}}
 \newcommand{\subsubsubsection}[1]{\paragraph{#1}}
 \newcommand{\TODO}[1]{\marginpar{\color{red}{\sc TODO:} #1}}
-\newcommand{\NOTE}[1]{\marginpar{\color{YellowOrange}{\sc CHECK:} #1}}
+\newcommand{\NOTE}[1]{\marginpar{\color{YellowOrange}{\sc NOTE:} #1}}
 \newcommand{\CHECK}[1]{\marginpar{\color{ForestGreen}{\sc CHECK:} #1}}
 \newcommand{\acfoot}[1]{\acsu{#1}\footnote{\acl*{#1}}}
 
@@ -42,11 +42,11 @@ Jane Doe
 \usepackage[nohyperlinks]{acronym}
 
 %%% Fine-tuning of this classicthesis
-\newcounter{dummy} % Fixes hyperref-errors (?)
+\newcounter{dummy}    % Fixes hyperref-errors (?)
 \usepackage{textcomp} % Fixes error messages that fonts are swapped out
-\usepackage{scrhack} % Fixes warnings in listings
+\usepackage{scrhack}  % Fixes warnings in listings
 
-\usepackage{xspace} % Handles space after macros.
+\usepackage{xspace}   % Handles space after macros.
 \usepackage{mparhack} % Margin fixes
 \usepackage{fixltx2e} % General fix for other small stuff
 
