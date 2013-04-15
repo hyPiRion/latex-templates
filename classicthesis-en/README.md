@@ -119,7 +119,7 @@ The `figure-name.tex` file should have the following layout:
 \begin{figure}[x]
   \centering
   \includegraphics[width=\textwidth]{fig/chapter-name/figure-name.[pdf|jpg|png]}
-  \caption{figure-text}
+  \caption{figure caption}
   \label{fig:figure-label}
 \end{figure}
 ```
@@ -138,4 +138,37 @@ If the figure is rather large, then the `width` parameter to the
 example would `[width=0.8\textwidth]` make the figure 80% of the text width.
 
 The labeling should be unique, to avoid collisions in large projects.
+
+### Tables
+
+Tables should also be placed within `fig/chapter-name/` and should be on the
+form `fig/chapter-name/table-name.tex`. Place tables directly within the
+tex-file, as tables usually are easy to read and doesn't require as much space
+as e.g. TikZ images.
+
+Tables should look as follows:
+```tex
+\begin{table}[x]
+  \centering
+  \begin{tabular}{ x  ...  x} \toprule
+    \thx{attr} & ... & \thx{attr}\\ \midrule
+    val & ... & val \\ \midrule
+	...
+	val & ... & val \\ \bottomrule
+  \end{tabular}
+  \caption{table caption}
+  \label{tab:table-name}
+\end{table}
+```
+
+All the `x`es within `x ... x` should be replaced with the most visually
+pleasing tag (*c* for *center*, *l* for *left* or *r* for *right*). It's smart
+to keep this consistent.
+
+For large tables, `tabularx` could be used, but large tables usually imply that
+the table should be split up, visualized differently or be presented as text
+instead.
+
+`\thx{}` is a command to make a table header, and `\thxc{}` is a centered
+`\thx`.
 
